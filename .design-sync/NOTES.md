@@ -107,6 +107,38 @@ node .design-sync/check-tokens.mjs components .design-sync/previews tokens guide
 Add `ds-token-ok` to a line to opt out - used in `Badge.jsx` and `StatusBadge.jsx`, where
 `border` is a data field interpolated into a real declaration later.
 
+## Guideline cards
+
+`guidelines/*.html` are hand-authored `@dsCard` HTML, copied into the bundle by
+`postbuild.mjs`. **The `viewport="WxH"` in the first-line marker is the card's real
+clip box** - content taller than `H` is cut off in the Design System pane, silently.
+
+`node .design-sync/card-fit.mjs guidelines/*.html` renders every card at its declared
+viewport and reports overflow (and any literal `
+` that leaked into the markup as
+visible text). Run it after touching a card.
+
+**Fixed 2026-09-05.** `spacing-density.html` and `spacing-scale.html` carried literal
+two-character `
+` escapes between their row/swatch divs, which rendered as visible
+text. In `spacing-density` that pushed content to 242px against a declared 205px, so
+the bottom row was clipped and the rows read as vertically off-centre. Both replaced
+with real newlines; all 17 cards now fit exactly.
+
+## Icon set
+
+`guidelines/brand-icons.html` is the single place the icon set is documented. The icons
+are **not** a component and there is no icon package: they are inline stroked SVGs
+(24px box, 2px stroke, `currentColor`, no fills) defined in the preview files and in
+`ui_kits/agreement_vault/icons.jsx`. Adding an icon means adding it to the card too, or
+it stops being discoverable.
+
+**Decided 2026-09-05.** The share/flow glyph (two nodes joined by an S-curve) belongs to
+**Development schedule**, not Rooms. Rooms now uses a door glyph, which reads literally
+as a room and matches the records-room metaphor. `SidebarNav`'s preview gained a
+`Development schedule` nav item so the glyph is shown in context - **drop that item if
+Development schedule is not a real section of the product.**
+
 ## Re-sync risks (watch-list)
 
 - The npm-pruned junction (above). `prep.mjs` heals it, so run `prep.mjs` first, always.
@@ -119,3 +151,4 @@ Add `ds-token-ok` to a line to opt out - used in `Badge.jsx` and `StatusBadge.js
   `Input` and `Switch` - they overflow a grid cell otherwise.
 - This directory is **not a git repo**, so none of this is version-controlled. Consider
   `git init`; a `.gitignore` is already written for the generated paths.
+- Card `viewport` heights: run `card-fit.mjs` after editing any guideline card.
