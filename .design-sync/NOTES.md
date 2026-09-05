@@ -133,6 +133,17 @@ are **not** a component and there is no icon package: they are inline stroked SV
 `ui_kits/agreement_vault/icons.jsx`. Adding an icon means adding it to the card too, or
 it stops being discoverable.
 
+The card is split into two sections: **Wired into components** (icons a component or
+preview actually references) and **Product nouns, not yet placed in a screen** (glyphs
+that exist for the vocabulary but no screen uses yet: Deadlines, Registrations, Units,
+Document health, Records). Keep that split honest when icons get wired up.
+
+New glyphs are checked at **16px**, the navigation size, not just at the 20px the card
+renders - fine interior detail that reads at 20px turns to mush at 16. The first
+Document health attempt (a fine 4-segment pulse inside a file) failed that test and was
+replaced with a bolder 3-point pulse. Deadlines is a clock because the system's own
+geometry rule says circles carry time.
+
 **Decided 2026-09-05.** The share/flow glyph (two nodes joined by an S-curve) belongs to
 **Development schedule**, not Rooms. Rooms now uses a door glyph, which reads literally
 as a room and matches the records-room metaphor. `SidebarNav`'s preview gained a
