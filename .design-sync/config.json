@@ -1,0 +1,35 @@
+{
+  "projectId": "f013d6cd-f4c3-47d6-b014-dab17e0fee75",
+  "pkg": "agreement-vault-design-system",
+  "shape": "package",
+  "srcDir": "components",
+  "entry": "dist/index.js",
+  "tokensGlob": ".design-sync/tokens/*.css",
+  "docsDir": ".design-sync/docs",
+  "componentSrcMap": {
+    "Marker": "components/data/FindingRow.jsx"
+  },
+  "tokensPkg": "agreement-vault-design-system",
+  "extraFonts": [
+    "tokens/fonts.css"
+  ],
+  "cssEntry": ".design-sync/component-styles.css",
+  "overrides": {
+    "DataTable": {
+      "cardMode": "column"
+    },
+    "FindingRow": {
+      "cardMode": "column"
+    },
+    "Marker": {
+      "cardMode": "column"
+    },
+    "Input": {
+      "cardMode": "column"
+    },
+    "Switch": {
+      "cardMode": "column"
+    }
+  },
+  "readmeHeader": ".design-sync/conventions.md"
+}

@@ -1,0 +1,325 @@
+/* Strongbox webfonts. Self-hosted, complete families, nothing synthesized.
+
+   Bitter        100-900 roman + italic
+   Source Sans 3 200-900 roman + italic
+
+   Each face lists .woff2 first and keeps the .ttf as a fallback, so modern
+   browsers download roughly half the bytes and older tooling still resolves.
+
+   The system itself only calls for Bitter 400/700/800 and Source Sans 3
+   400/500/600/700 (see tokens/typography.css); the remaining weights are
+   declared so marketing and document work can reach for them without
+   re-plumbing anything. Italics are available but are not part of the product
+   voice: Strongbox does not italicize UI copy.
+
+   For an app bundle, ship only the weights the product uses. */
+
+/* --- Bitter, slab serif: headings, card titles, hero numbers ------------- */
+
+@font-face {
+  font-family: "Bitter";
+  src: url("../assets/fonts/Bitter-Thin.woff2") format("woff2"),
+       url("../assets/fonts/Bitter-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bitter";
+  src: url("../assets/fonts/Bitter-ExtraLight.woff2") format("woff2"),
+       url("../assets/fonts/Bitter-ExtraLight.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bitter";
+  src: url("../assets/fonts/Bitter-Light.woff2") format("woff2"),
+       url("../assets/fonts/Bitter-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bitter";
+  src: url("../assets/fonts/Bitter-Regular.woff2") format("woff2"),
+       url("../assets/fonts/Bitter-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bitter";
+  src: url("../assets/fonts/Bitter-Medium.woff2") format("woff2"),
+       url("../assets/fonts/Bitter-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bitter";
+  src: url("../assets/fonts/Bitter-SemiBold.woff2") format("woff2"),
+       url("../assets/fonts/Bitter-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bitter";
+  src: url("../assets/fonts/Bitter-Bold.woff2") format("woff2"),
+       url("../assets/fonts/Bitter-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bitter";
+  src: url("../assets/fonts/Bitter-ExtraBold.woff2") format("woff2"),
+       url("../assets/fonts/Bitter-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bitter";
+  src: url("../assets/fonts/Bitter-Black.woff2") format("woff2"),
+       url("../assets/fonts/Bitter-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bitter";
+  src: url("../assets/fonts/Bitter-ThinItalic.woff2") format("woff2"),
+       url("../assets/fonts/Bitter-ThinItalic.ttf") format("truetype");
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bitter";
+  src: url("../assets/fonts/Bitter-ExtraLightItalic.woff2") format("woff2"),
+       url("../assets/fonts/Bitter-ExtraLightItalic.ttf") format("truetype");
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bitter";
+  src: url("../assets/fonts/Bitter-LightItalic.woff2") format("woff2"),
+       url("../assets/fonts/Bitter-LightItalic.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bitter";
+  src: url("../assets/fonts/Bitter-Italic.woff2") format("woff2"),
+       url("../assets/fonts/Bitter-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bitter";
+  src: url("../assets/fonts/Bitter-MediumItalic.woff2") format("woff2"),
+       url("../assets/fonts/Bitter-MediumItalic.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bitter";
+  src: url("../assets/fonts/Bitter-SemiBoldItalic.woff2") format("woff2"),
+       url("../assets/fonts/Bitter-SemiBoldItalic.ttf") format("truetype");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bitter";
+  src: url("../assets/fonts/Bitter-BoldItalic.woff2") format("woff2"),
+       url("../assets/fonts/Bitter-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bitter";
+  src: url("../assets/fonts/Bitter-ExtraBoldItalic.woff2") format("woff2"),
+       url("../assets/fonts/Bitter-ExtraBoldItalic.ttf") format("truetype");
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bitter";
+  src: url("../assets/fonts/Bitter-BlackItalic.woff2") format("woff2"),
+       url("../assets/fonts/Bitter-BlackItalic.ttf") format("truetype");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* --- Source Sans 3, humanist sans: all interface text -------------------- */
+
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("../assets/fonts/SourceSans3-ExtraLight.woff2") format("woff2"),
+       url("../assets/fonts/SourceSans3-ExtraLight.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("../assets/fonts/SourceSans3-Light.woff2") format("woff2"),
+       url("../assets/fonts/SourceSans3-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("../assets/fonts/SourceSans3-Regular.woff2") format("woff2"),
+       url("../assets/fonts/SourceSans3-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("../assets/fonts/SourceSans3-Medium.woff2") format("woff2"),
+       url("../assets/fonts/SourceSans3-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("../assets/fonts/SourceSans3-SemiBold.woff2") format("woff2"),
+       url("../assets/fonts/SourceSans3-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("../assets/fonts/SourceSans3-Bold.woff2") format("woff2"),
+       url("../assets/fonts/SourceSans3-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("../assets/fonts/SourceSans3-ExtraBold.woff2") format("woff2"),
+       url("../assets/fonts/SourceSans3-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("../assets/fonts/SourceSans3-Black.woff2") format("woff2"),
+       url("../assets/fonts/SourceSans3-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("../assets/fonts/SourceSans3-ExtraLightItalic.woff2") format("woff2"),
+       url("../assets/fonts/SourceSans3-ExtraLightItalic.ttf") format("truetype");
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("../assets/fonts/SourceSans3-LightItalic.woff2") format("woff2"),
+       url("../assets/fonts/SourceSans3-LightItalic.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("../assets/fonts/SourceSans3-Italic.woff2") format("woff2"),
+       url("../assets/fonts/SourceSans3-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("../assets/fonts/SourceSans3-MediumItalic.woff2") format("woff2"),
+       url("../assets/fonts/SourceSans3-MediumItalic.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("../assets/fonts/SourceSans3-SemiBoldItalic.woff2") format("woff2"),
+       url("../assets/fonts/SourceSans3-SemiBoldItalic.ttf") format("truetype");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("../assets/fonts/SourceSans3-BoldItalic.woff2") format("woff2"),
+       url("../assets/fonts/SourceSans3-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("../assets/fonts/SourceSans3-ExtraBoldItalic.woff2") format("woff2"),
+       url("../assets/fonts/SourceSans3-ExtraBoldItalic.ttf") format("truetype");
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("../assets/fonts/SourceSans3-BlackItalic.woff2") format("woff2"),
+       url("../assets/fonts/SourceSans3-BlackItalic.ttf") format("truetype");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}

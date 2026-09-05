@@ -1,0 +1,7 @@
+/* @ds-css-runtime: Strongbox ships no compiled component stylesheet.
+
+   Every component in this system styles itself with inline styles that read CSS
+   custom properties (`font: var(--type-body)`, `color: var(--status-overdue-fg)`).
+   All real, shippable CSS is therefore the token layer - tokens/*.css and
+   fonts/fonts.css - which styles.css @imports directly. There is no component CSS
+   to extract, so this file is deliberately empty of rules rather than missing. */

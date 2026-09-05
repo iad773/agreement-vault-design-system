@@ -1,0 +1,47 @@
+:root {
+  /* Families */
+  --font-slab: "Bitter", Georgia, "Times New Roman", serif;      /* headings, key numbers */
+  --font-sans: "Source Sans 3", system-ui, -apple-system, sans-serif; /* interface */
+  --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;   /* dates in feeds */
+
+  /* Sizes. 12px is the floor anywhere in the product. */
+  --text-2xs: 10.5px;  /* SANDBOX badge only */
+  --text-xs: 11px;     /* letterspaced caps labels, badges */
+  --text-sm: 12.5px;   /* dense meta */
+  --text-base: 13px;
+  --text-md: 13.5px;   /* table cells, buttons */
+  --text-lg: 14px;     /* body */
+  --text-xl: 14.5px;   /* finding rows */
+  --text-2xl: 15.5px;  /* card titles */
+  --text-3xl: 19px;    /* screen titles */
+  --text-4xl: 26px;    /* page heading */
+  --text-num-md: 32px;
+  --text-num-lg: 40px;
+  --text-num-xl: 50px; /* the one hero number per screen */
+
+  /* Weights */
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --weight-black: 800;  /* Bitter headings and hero numbers */
+
+  --leading-tight: 1;
+  --leading-snug: 1.25;
+  --leading-body: 1.45;
+
+  --tracking-caps: 0.08em;   /* uppercase micro labels */
+  --tracking-wordmark: 0.1em;
+
+  /* Composed roles */
+  --type-page-heading: var(--weight-black) var(--text-4xl)/var(--leading-snug) var(--font-slab);
+  --type-card-title: var(--weight-bold) var(--text-2xl)/var(--leading-snug) var(--font-slab);
+  --type-screen-title: var(--weight-black) var(--text-3xl)/var(--leading-snug) var(--font-slab);
+  --type-hero-number: var(--weight-black) var(--text-num-xl)/var(--leading-tight) var(--font-slab);
+  --type-body: var(--weight-regular) var(--text-lg)/var(--leading-body) var(--font-sans);
+  --type-table-cell: var(--weight-regular) var(--text-md)/var(--leading-body) var(--font-sans);
+  --type-table-title: var(--weight-semibold) var(--text-lg)/var(--leading-body) var(--font-sans);
+  --type-label-caps: var(--weight-semibold) var(--text-xs)/1.2 var(--font-sans);
+  --type-badge: var(--weight-bold) var(--text-xs)/1.2 var(--font-sans);
+  --type-button: var(--weight-semibold) var(--text-md)/1.2 var(--font-sans);
+}

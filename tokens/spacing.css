@@ -1,0 +1,32 @@
+:root {
+  /* Real values from the Strongbox boards. Not snapped to a 4px grid. */
+  --space-0: 0px;
+  --space-1: 3px;
+  --space-2: 6px;
+  --space-3: 8px;
+  --space-4: 10px;
+  --space-5: 12px;
+  --space-6: 14px;
+  --space-7: 16px;
+  --space-8: 18px;
+  --space-9: 20px;
+  --space-10: 22px;
+  --space-11: 24px;
+  --space-12: 28px;
+  --space-13: 32px;
+  --space-14: 44px;
+
+  /* Layout */
+  --sidebar-width: 224px;
+  --tree-width: 264px;
+  --chrome-height: 54px;
+  --row-height: 44px;
+  --row-height-dense: 40px;
+
+  --card-padding-y: var(--space-6);
+  --card-padding-x: var(--space-10);
+  --row-padding-y: var(--space-5);
+  --row-padding-x: var(--space-10);
+  --gap-card: var(--space-7);
+  --gap-stack: var(--space-7);
+}

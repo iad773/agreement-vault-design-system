@@ -1,0 +1,71 @@
+:root {
+  /* --- Cool steel neutrals ------------------------------------------------ */
+  --steel-25: #F8F9FB;
+  --steel-50: #F2F3F5;   /* app ground */
+  --steel-100: #E9EDF1;  /* plate: sidebars, rails */
+  --steel-150: #E2E6EB;  /* inner row rule */
+  --steel-200: #D3D8DE;  /* line */
+  --steel-300: #C6CDD6;  /* line, strong (card borders) */
+  --steel-400: #A7B0BA;
+  --steel-500: #8894A1;
+  --steel-600: #5C6670;  /* muted text */
+  --steel-700: #3B4653;  /* secondary text */
+  --steel-900: #161C24;  /* ink */
+  --white: #FFFFFF;
+
+  /* --- Accent: vault steel ------------------------------------------------ */
+  --vault-steel: #2C3E52;
+  --vault-steel-hover: #223142;
+  --vault-steel-tint: #E6EBF1;
+  --vault-steel-tint-border: #C4CFDB;
+  --on-dark: #FFFFFF;
+  --on-dark-muted: #B9C2CC;
+
+  /* --- Urgency. Reserved. Never decorative. ------------------------------- */
+  --danger: #B3271E;
+  --danger-surface: #F8E9E7;
+  --danger-border: #E5BFBA;
+  --warning: #96660A;
+  --warning-surface: #F5EDD9;
+  --warning-border: #E0CB96;
+  --sandbox-band: #EFC24F;
+  --sandbox-band-border: #CBA23B;
+
+  /* --- Semantic aliases --------------------------------------------------- */
+  --surface-app: var(--steel-50);
+  --surface-card: var(--white);
+  --surface-plate: var(--steel-100);
+  --surface-raised: var(--white);
+  --surface-inverse: var(--steel-900);
+  --surface-hover: var(--steel-100);
+  --surface-selected: var(--vault-steel);
+
+  --text-strong: var(--steel-900);
+  --text-body: var(--steel-900);
+  --text-secondary: var(--steel-700);
+  --text-muted: var(--steel-600);
+  --text-inverse: var(--on-dark);
+  --text-inverse-muted: var(--on-dark-muted);
+  --text-link: var(--vault-steel);
+
+  --border-hairline: var(--steel-200);
+  /* Border COLORS. Distinct from the --border-card / --border-row shorthands in
+     shape.css: those already carry a width and a style, so writing
+     `solid var(--border-card)` expands to invalid CSS and the border vanishes.
+     Use these wherever a bare color is needed. */
+  --border-row-color: var(--steel-150);
+  --border-card-color: var(--steel-300);
+  --rule-header: var(--vault-steel);
+
+  --status-executed-fg: var(--vault-steel);
+  --status-executed-bg: var(--vault-steel-tint);
+  --status-executed-border: var(--vault-steel-tint-border);
+  --status-due-fg: var(--warning);
+  --status-due-bg: var(--warning-surface);
+  --status-due-border: var(--warning-border);
+  --status-overdue-fg: var(--danger);
+  --status-overdue-bg: var(--danger-surface);
+  --status-overdue-border: var(--danger-border);
+  --status-draft-fg: var(--steel-600);
+  --status-draft-border: var(--steel-400);
+}

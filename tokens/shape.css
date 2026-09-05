@@ -1,0 +1,28 @@
+:root {
+  /* Corners are nearly square. Strongbox is built, not soft. */
+  --radius-none: 0px;
+  --radius-sm: 2px;
+  --radius-md: 3px;     /* default: cards, buttons, badges, nav items */
+  --radius-pill: 999px; /* toggles and avatars only */
+
+  /* Borders. The 1.5px card border and the 2px steel header rule are the
+     two structural signatures of the treatment. */
+  --border-width-hairline: 1px;
+  --border-width-card: 1.5px;
+  --border-width-header-rule: 2px;
+  --border-width-mark: 6px;   /* the vault-door ring in brand lockups */
+
+  --border-card: var(--border-width-card) solid var(--steel-300);
+  --border-row: var(--border-width-hairline) solid var(--steel-150);
+  --rule-card-header: var(--border-width-header-rule) solid var(--vault-steel);
+
+  /* Shadow is used sparingly: one soft lift for floating surfaces, nothing
+     on resting cards. Weight comes from borders, not blur. */
+  --shadow-none: none;
+  --shadow-card: 0 2px 10px rgba(22, 28, 36, 0.08);
+  --shadow-overlay: 0 12px 32px rgba(22, 28, 36, 0.22);
+
+  --focus-ring: 0 0 0 2px var(--white), 0 0 0 4px var(--vault-steel);
+  --transition-fast: 90ms linear;
+  --transition-base: 140ms ease-out;
+}

@@ -1,0 +1,75 @@
+<!-- @dsCard group="Components" viewport="700x440" subtitle="The lintel, the fixed nav, the folder tree and the row menu" name="Navigation: chrome, sidebar, tree, menu" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body { padding: 18px 20px; background: var(--surface-card); }
+  .stack { display: grid; gap: 14px; }
+  .row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone@7.24.7/babel.min.js"></script>
+<script src="../../_ds_bundle.js"></script>
+<script src="../../ds-preview.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel" data-presets="react">
+const NEEDS = ["AppChrome", "SidebarNav", "Breadcrumb", "EntityTree", "SandboxBanner", "ContextMenu", "Badge", "IconButton"];
+
+const g = function (paths, size) { return (<svg width={size || 16} height={size || 16} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" dangerouslySetInnerHTML={{ __html: paths }} />); };
+
+function Demo() {
+  const [inactive, setInactive] = React.useState(false);
+  const navItems = [
+    { id: 'overview', label: 'Overview', icon: g('<rect width="7" height="9" x="3" y="3" rx="1"></rect><rect width="7" height="5" x="14" y="3" rx="1"></rect><rect width="7" height="9" x="14" y="12" rx="1"></rect><rect width="7" height="5" x="3" y="16" rx="1"></rect>') },
+    { id: 'documents', label: 'Documents', icon: g('<path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"></path><path d="M14 2v5h5"></path>') },
+    { id: 'review', label: 'Review', icon: g('<path d="M22 12h-6l-2 3h-4l-2-3H2"></path><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"></path>'), badge: <Badge tone="inverse">3</Badge> },
+    { id: 'rooms', label: 'Rooms', icon: g('<circle cx="6" cy="19" r="3"></circle><circle cx="18" cy="5" r="3"></circle><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"></path>') },
+    { id: 'room-1', label: '2027 FDD Renewal', child: true },
+    { id: 'room-2', label: 'Unit 12 Transfer', child: true },
+    { id: 'div', divider: true },
+    { id: 'settings', label: 'Settings', icon: g('<path d="M3 5h10"></path><circle cx="16" cy="5" r="2"></circle><path d="M19 5h2"></path><path d="M3 12h4"></path><circle cx="10" cy="12" r="2"></circle><path d="M13 12h8"></path>') },
+  ];
+  const nodes = [
+    { id: 'gearhart', name: 'Gearhart Enterprises LLC', count: 24 },
+    { id: 'callahan', name: 'Callahan Development Group', count: 31, expanded: true },
+    { id: 'unit-4', name: 'Unit 4', depth: 1 },
+    { id: 'unit-12', name: 'Unit 12', depth: 1 },
+    { id: 'orbit', name: 'Orbit Holdings', count: 18 },
+  ];
+  const menu = [
+    { label: 'Open', emphasis: true }, { label: 'Copy link' }, { label: 'Download' }, { label: 'Download with certificate' },
+    { separator: true }, { label: 'Add to room' }, { separator: true }, { label: 'Request signature send' }, { label: 'Signing history' },
+    { separator: true }, { label: 'Related documents' }, { label: 'Details' }, { label: 'Deadlines' }, { label: 'Set deadline reminder' },
+    { separator: true }, { label: 'Reassign' }, { label: 'Delete' },
+  ];
+  return (
+    <div className="stack">
+      <div style={{ border: '1px solid var(--border-card-color)' }}>
+        <SandboxBanner sticky={false} />
+        <AppChrome brandName="Spacely Sprockets Franchising" badge={<Badge tone="warning">SANDBOX</Badge>} actions={<IconButton label="Alerts" tone="onDark" icon={g('<path d="M6 8a6 6 0 0 1 12 0c0 7 3 7 3 9H3c0-2 3-2 3-9"></path><path d="M10 21h4"></path>')} />} />
+        <div style={{ padding: '10px 20px', background: 'var(--surface-card)', borderBottom: '1px solid var(--border-hairline)' }}>
+          <Breadcrumb items={[{ label: 'Spacely Sprockets' }, { label: 'Callahan Development Group' }, { label: 'Unit 12' }]} />
+        </div>
+      </div>
+      <div style={{ display: 'flex', gap: 14, alignItems: 'flex-start' }}>
+        <SidebarNav items={navItems} activeId="documents" style={{ border: '1px solid var(--border-card-color)' }} />
+        <EntityTree nodes={nodes} selectedId="unit-12" showInactive={inactive} onToggleInactive={function () { setInactive(!inactive); }} style={{ border: '1px solid var(--border-card-color)' }} />
+        <ContextMenu items={menu} anchored={false} />
+      </div>
+    </div>
+  );
+}
+
+window.__dsReady(["../../components/core/Button.jsx", "../../components/core/IconButton.jsx", "../../components/core/Badge.jsx", "../../components/core/Tag.jsx", "../../components/core/Card.jsx", "../../components/forms/Input.jsx", "../../components/forms/Select.jsx", "../../components/forms/Checkbox.jsx", "../../components/forms/Switch.jsx", "../../components/data/StatusBadge.jsx", "../../components/data/DataTable.jsx", "../../components/data/FindingRow.jsx", "../../components/data/StatBlock.jsx", "../../components/navigation/AppChrome.jsx", "../../components/navigation/SidebarNav.jsx", "../../components/navigation/Breadcrumb.jsx", "../../components/navigation/EntityTree.jsx", "../../components/navigation/SandboxBanner.jsx", "../../components/navigation/ContextMenu.jsx"], function () {
+  const ns = window.__ds(NEEDS);
+  NEEDS.forEach(function (n) { window[n] = ns[n]; });
+  ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!-- @dsCard group="Colors" viewport="700x190" subtitle="The same three rows with color removed. Still unambiguous." name="Greyscale check" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { padding: 18px 20px; background: var(--surface-card); }
+  .row { display: flex; gap: 10px; flex-wrap: wrap; align-items: flex-start; }
+  .sw { width: 78px; }
+  .chip { height: 46px; border-radius: var(--radius-md); border: 1px solid var(--border-hairline); }
+  .nm { font: var(--type-label-caps); color: var(--text-strong); margin-top: 6px; display: block; }
+  .hx { font: var(--weight-regular) 10.5px var(--font-mono); color: var(--text-muted); display: block; }
+</style>
+</head>
+<body>
+<div style="filter:grayscale(1);border:var(--border-card);background:var(--surface-card)">
+  <div style="display:grid;grid-template-columns:1fr 130px;align-items:center;padding:10px 14px">
+    <span style="font:var(--type-table-title);color:var(--text-strong)">Franchise Agreement - Unit 12</span>
+    <span style="font:var(--type-badge);letter-spacing:var(--tracking-caps);color:var(--status-executed-fg)">&#9679; EXECUTED</span>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 130px;align-items:center;padding:10px 14px;border-top:1px solid var(--border-hairline);background:var(--status-due-bg)">
+    <span style="font:var(--type-table-title);color:var(--text-strong)">2027 FDD renewal filing</span>
+    <span style="font:var(--type-badge);letter-spacing:var(--tracking-caps);color:var(--status-due-fg)">&#9670; DUE SOON</span>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 130px;align-items:center;padding:10px 14px;border-top:1px solid var(--border-hairline);background:var(--status-overdue-bg)">
+    <span style="font:var(--weight-bold) var(--text-lg) var(--font-sans);color:var(--text-strong)">Wisconsin registration renewal</span>
+    <span style="font:var(--type-badge);letter-spacing:var(--tracking-caps);color:var(--status-overdue-fg)">&#9650; OVERDUE</span>
+  </div>
+</div>
+</body>
+</html>

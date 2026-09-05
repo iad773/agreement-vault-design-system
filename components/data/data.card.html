@@ -1,0 +1,71 @@
+<!-- @dsCard group="Components" viewport="700x440" subtitle="The dense record table, status vocabulary, findings and figures" name="Data: table, status, findings, stats" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body { padding: 18px 20px; background: var(--surface-card); }
+  .stack { display: grid; gap: 14px; }
+  .row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone@7.24.7/babel.min.js"></script>
+<script src="../../_ds_bundle.js"></script>
+<script src="../../ds-preview.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel" data-presets="react">
+const NEEDS = ["DataTable", "StatusBadge", "FindingRow", "StatBlock", "Card"];
+
+function Demo() {
+  const columns = [
+    { key: 'title', header: 'Title', primary: true },
+    { key: 'type', header: 'Type', width: '150px', muted: true },
+    { key: 'status', header: 'Status', width: '130px' },
+    { key: 'filed', header: 'Filed', width: '110px', numeric: true },
+  ];
+  const rows = [
+    { id: '1', title: 'Franchise Agreement - Unit 12', type: 'Franchise agreement', status: <StatusBadge status="executed" />, filed: 'Mar 10, 2023' },
+    { id: '2', title: 'Amendment No. 1 - Unit 12', type: 'Amendment', status: <StatusBadge status="executed" />, filed: 'Jun 20, 2024' },
+    { id: '3', title: '2027 FDD renewal filing', type: 'FDD receipt', status: <StatusBadge status="dueSoon" />, filed: '-', urgency: 'dueSoon' },
+    { id: '4', title: 'Wisconsin registration renewal', type: 'State registration', status: <StatusBadge status="overdue" />, filed: '-', urgency: 'overdue' },
+  ];
+  return (
+    <div className="stack">
+      <div className="row">
+        <StatusBadge status="executed" />
+        <StatusBadge status="dueSoon" />
+        <StatusBadge status="overdue" />
+        <StatusBadge status="draft" />
+        <StatusBadge status="renewalWindow" />
+        <StatusBadge status="executed" plain />
+      </div>
+      <Card><DataTable columns={columns} rows={rows} selectedId="2" /></Card>
+      <Card title="Needs your attention" meta="3 findings from this morning's check">
+        <FindingRow kind="overdue" severity="overdue" headline="Wisconsin franchise registration is not in force" detail="and no alert was on file." timing="Lapsed 90 days ago, Jun 3" action="Open registration" />
+        <FindingRow kind="finding" headline="Unit 6 has no signed franchise agreement on file." detail="The folder holds an unsigned draft and the FDD receipt." timing="Open since Mar 2022" action="Open unit 6" />
+        <FindingRow kind="check" severity="warning" headline="Unit 10's territory amendment overlaps Unit 14." detail="Check the boundary language in both." timing="Found Aug 19" action="Compare territories" />
+      </Card>
+      <Card title="Under contract" meta="Read from executed agreements.">
+        <StatBlock
+          hero="$105,000"
+          stats={[{ value: '13', label: 'open units' }, { value: '5.8%', label: 'weighted average royalty' }, { value: '6.4', unit: 'yrs', label: 'weighted average term remaining' }]}
+          note="Next due Aug 2027, $35,000 when Redline signs its first unit agreement."
+          provenance="Read from executed agreements. Nothing here is a projection."
+        />
+      </Card>
+    </div>
+  );
+}
+
+window.__dsReady(["../../components/core/Button.jsx", "../../components/core/IconButton.jsx", "../../components/core/Badge.jsx", "../../components/core/Tag.jsx", "../../components/core/Card.jsx", "../../components/forms/Input.jsx", "../../components/forms/Select.jsx", "../../components/forms/Checkbox.jsx", "../../components/forms/Switch.jsx", "../../components/data/StatusBadge.jsx", "../../components/data/DataTable.jsx", "../../components/data/FindingRow.jsx", "../../components/data/StatBlock.jsx", "../../components/navigation/AppChrome.jsx", "../../components/navigation/SidebarNav.jsx", "../../components/navigation/Breadcrumb.jsx", "../../components/navigation/EntityTree.jsx", "../../components/navigation/SandboxBanner.jsx", "../../components/navigation/ContextMenu.jsx"], function () {
+  const ns = window.__ds(NEEDS);
+  NEEDS.forEach(function (n) { window[n] = ns[n]; });
+  ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+});
+</script>
+</body>
+</html>

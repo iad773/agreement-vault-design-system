@@ -1,0 +1,26 @@
+<!-- @dsCard group="Colors" viewport="700x180" subtitle="Red and amber are never decorative. Sandbox band is its own reserved yellow." name="Urgency: reserved" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { padding: 18px 20px; background: var(--surface-card); }
+  .row { display: flex; gap: 10px; flex-wrap: wrap; align-items: flex-start; }
+  .sw { width: 78px; }
+  .chip { height: 46px; border-radius: var(--radius-md); border: 1px solid var(--border-hairline); }
+  .nm { font: var(--type-label-caps); color: var(--text-strong); margin-top: 6px; display: block; }
+  .hx { font: var(--weight-regular) 10.5px var(--font-mono); color: var(--text-muted); display: block; }
+</style>
+</head>
+<body>
+<div class="row">
+      <div class="sw"><div class="chip" style="background:var(--danger);"></div><span class="nm">Danger</span><span class="hx">--danger</span></div>
+      <div class="sw"><div class="chip" style="background:var(--danger-surface);"></div><span class="nm">Danger bg</span><span class="hx">--danger-surface</span></div>
+      <div class="sw"><div class="chip" style="background:var(--warning);"></div><span class="nm">Warning</span><span class="hx">--warning</span></div>
+      <div class="sw"><div class="chip" style="background:var(--warning-surface);"></div><span class="nm">Warning bg</span><span class="hx">--warning-surface</span></div>
+      <div class="sw"><div class="chip" style="background:var(--sandbox-band);"></div><span class="nm">Sandbox</span><span class="hx">--sandbox-band</span></div>
+</div>
+<div style="margin-top:12px;font:var(--weight-regular) 12.5px var(--font-sans);color:var(--text-muted)">Never as a brand accent, a chart color, or an illustration fill.</div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!-- @dsCard group="Components" viewport="700x340" subtitle="Actions, markers and the panel surface" name="Core: buttons, badges, tags, card" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body { padding: 18px 20px; background: var(--surface-card); }
+  .stack { display: grid; gap: 14px; }
+  .row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+</style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone@7.24.7/babel.min.js"></script>
+<script src="../../_ds_bundle.js"></script>
+<script src="../../ds-preview.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel" data-presets="react">
+const NEEDS = ["Button", "IconButton", "Badge", "Tag", "Card"];
+
+const Upload = () => (<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="m17 8-5-5-5 5"></path><path d="M12 3v12"></path></svg>);
+const Bell = () => (<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 7 3 9H3c0-2 3-2 3-9"></path><path d="M10 21h4"></path></svg>);
+
+function Demo() {
+  return (
+    <div className="stack">
+      <div className="row">
+        <Button variant="primary" icon={<Upload />}>Add documents</Button>
+        <Button variant="secondary">Download</Button>
+        <Button variant="quiet">Show inactive</Button>
+        <Button variant="link">View all deadlines</Button>
+        <Button variant="primary" disabled>Disabled</Button>
+      </div>
+      <div className="row">
+        <Button size="sm" variant="secondary">Small</Button>
+        <Button size="md" variant="secondary">Medium</Button>
+        <Button size="lg" variant="secondary">Large</Button>
+        <span style={{ background: 'var(--surface-inverse)', padding: 4, borderRadius: 'var(--radius-md)' }}>
+          <IconButton label="Alerts" tone="onDark" icon={<Bell />} />
+        </span>
+        <IconButton label="Alerts" icon={<Bell />} />
+      </div>
+      <div className="row">
+        <Badge tone="inverse">3</Badge>
+        <Badge tone="steel">EXECUTED</Badge>
+        <Badge tone="warning">SANDBOX</Badge>
+        <Badge tone="danger">OVERDUE</Badge>
+        <Badge tone="neutral" dashed>DRAFT</Badge>
+        <Tag>Franchise agreement</Tag>
+        <Tag onRemove={function () {}}>Callahan Development Group</Tag>
+      </div>
+      <Card title="Under contract" meta="Read from executed agreements.">
+        <div style={{ padding: '12px 22px', font: 'var(--type-body)', color: 'var(--text-secondary)' }}>
+          Titled card: 2px vault-steel header rule, 1.5px border, no resting shadow.
+        </div>
+        <div style={{ padding: '12px 22px', borderTop: 'var(--border-row)', font: 'var(--type-body)', color: 'var(--text-secondary)' }}>
+          Rows are separated by full-width hairlines.
+        </div>
+      </Card>
+    </div>
+  );
+}
+
+window.__dsReady(["../../components/core/Button.jsx", "../../components/core/IconButton.jsx", "../../components/core/Badge.jsx", "../../components/core/Tag.jsx", "../../components/core/Card.jsx", "../../components/forms/Input.jsx", "../../components/forms/Select.jsx", "../../components/forms/Checkbox.jsx", "../../components/forms/Switch.jsx", "../../components/data/StatusBadge.jsx", "../../components/data/DataTable.jsx", "../../components/data/FindingRow.jsx", "../../components/data/StatBlock.jsx", "../../components/navigation/AppChrome.jsx", "../../components/navigation/SidebarNav.jsx", "../../components/navigation/Breadcrumb.jsx", "../../components/navigation/EntityTree.jsx", "../../components/navigation/SandboxBanner.jsx", "../../components/navigation/ContextMenu.jsx"], function () {
+  const ns = window.__ds(NEEDS);
+  NEEDS.forEach(function (n) { window[n] = ns[n]; });
+  ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+});
+</script>
+</body>
+</html>

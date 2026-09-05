@@ -1,0 +1,28 @@
+<!-- @dsCard group="Brand" viewport="700x215" subtitle="3px radius, 1.5px steel border, 2px header rule, no resting shadow." name="Card construction" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { padding: 18px 20px; background: var(--surface-card); }
+  .row { display: flex; gap: 10px; flex-wrap: wrap; align-items: flex-start; }
+  .sw { width: 78px; }
+  .chip { height: 46px; border-radius: var(--radius-md); border: 1px solid var(--border-hairline); }
+  .nm { font: var(--type-label-caps); color: var(--text-strong); margin-top: 6px; display: block; }
+  .hx { font: var(--weight-regular) 10.5px var(--font-mono); color: var(--text-muted); display: block; }
+</style>
+</head>
+<body>
+<div style="display:flex;gap:14px">
+  <div style="flex:1;border:var(--border-card);border-radius:var(--radius-md);background:var(--surface-card)">
+    <div style="padding:12px 20px;border-bottom:var(--rule-card-header);font:var(--type-card-title);color:var(--text-strong)">Titled card</div>
+    <div style="padding:12px 20px;font:var(--type-body);color:var(--text-secondary)">Header rule is 2px vault steel. Rows below use 1px hairlines.</div>
+    <div style="padding:12px 20px;border-top:var(--border-row);font:var(--type-body);color:var(--text-secondary)">Second row.</div>
+  </div>
+  <div style="flex:1;border:var(--border-card);border-radius:var(--radius-md);background:var(--surface-card);padding:12px 20px">
+    <div style="font:var(--type-body);color:var(--text-secondary)">Untitled card: border only, no rule, no shadow. Weight comes from the border, never from blur.</div>
+  </div>
+</div>
+</body>
+</html>

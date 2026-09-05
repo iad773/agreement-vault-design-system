@@ -1,0 +1,35 @@
+<!-- @dsCard group="Colors" viewport="700x210" subtitle="Wording, glyph, and weight carry the state. Color sits on top." name="Status in context" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  body { padding: 18px 20px; background: var(--surface-card); }
+  .row { display: flex; gap: 10px; flex-wrap: wrap; align-items: flex-start; }
+  .sw { width: 78px; }
+  .chip { height: 46px; border-radius: var(--radius-md); border: 1px solid var(--border-hairline); }
+  .nm { font: var(--type-label-caps); color: var(--text-strong); margin-top: 6px; display: block; }
+  .hx { font: var(--weight-regular) 10.5px var(--font-mono); color: var(--text-muted); display: block; }
+</style>
+</head>
+<body>
+<div style="border:var(--border-card);background:var(--surface-card)">
+  <div style="display:grid;grid-template-columns:1fr 130px 170px;align-items:center;padding:11px 14px">
+    <span style="font:var(--type-table-title);color:var(--text-strong)">Franchise Agreement - Unit 12</span>
+    <span style="font:var(--type-badge);letter-spacing:var(--tracking-caps);color:var(--status-executed-fg)">&#9679; EXECUTED</span>
+    <span style="font:var(--type-table-cell);color:var(--text-muted);text-align:right">Filed Mar 10, 2023</span>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 130px 170px;align-items:center;padding:11px 14px;border-top:1px solid var(--border-hairline);background:var(--status-due-bg)">
+    <span style="font:var(--type-table-title);color:var(--text-strong)">2027 FDD renewal filing</span>
+    <span style="font:var(--type-badge);letter-spacing:var(--tracking-caps);color:var(--status-due-fg)">&#9670; DUE SOON</span>
+    <span style="font:var(--weight-semibold) var(--text-base) var(--font-sans);color:var(--status-due-fg);text-align:right">Due Dec 31, 2026</span>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 130px 170px;align-items:center;padding:11px 14px;border-top:1px solid var(--border-hairline);background:var(--status-overdue-bg)">
+    <span style="font:var(--weight-bold) var(--text-lg) var(--font-sans);color:var(--text-strong)">Wisconsin registration renewal</span>
+    <span style="font:var(--type-badge);letter-spacing:var(--tracking-caps);color:var(--status-overdue-fg)">&#9650; OVERDUE</span>
+    <span style="font:var(--weight-bold) var(--text-base) var(--font-sans);color:var(--status-overdue-fg);text-align:right">Lapsed 90 days ago</span>
+  </div>
+</div>
+</body>
+</html>
